@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true})
@@ -14,4 +15,4 @@ app.use(express.json())
 const usersRouter = require('./routes/persons')
  app.use('https://hng-track2.onrender.com/api', usersRouter)
 
-app.listen(3000,() =>console.log('server is running') )
+app.listen(port,() =>console.log('server is running') )
