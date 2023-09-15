@@ -13,6 +13,7 @@ db.once('open', ()=> console.log('Connected to database'))
 app.use(express.json())
 
 const usersRouter = require('./routes/persons')
- app.use('https://hng-track2.onrender.com/api', usersRouter)
+ app.use('/api', usersRouter)
 
+// app.use('/api', usersRouter)
 app.listen(port,() =>console.log('server is running') )
